@@ -1,0 +1,63 @@
+<div class="body">
+  <div class="app flex-row align-items-center " style="height: 100%">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 right-padding-zero">
+          <div class="card">
+            <div class="card-header card-header-btn">
+              <div class="row">
+                <div class="col-sm-6">
+                  <strong>Communication Log</strong>
+                </div>
+                <div class="col-sm-6">
+                  <button class="btn btn-primary btn-sm pull-right" (click)="onRefreshLog()" type="button">
+                    <i class="fa fa-refresh spin"></i>&nbsp; Refresh Log </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body" style="background: #CCC">
+              <div id="commLog" style="padding-top: 5px; height: 400px; overflow: auto">
+                <div *ngFor="let log of logArray">
+                  <div *ngIf="log.userId==user.id" class="col-sm-10 bubble me">
+                    <span><b>{{log.userFirstName}} {{log.userLastName}}</b></span>
+                    <p class="pcls">{{log.message}}</p>
+                    <span class="pull-right"> {{log.sentTime}}</span>
+                  </div>
+                  <div *ngIf="log.userId!=user.id" class="col-sm-10 bubble you">
+                      <span><b>{{log.userFirstName}} {{log.userLastName}}</b></span>
+                      <p class="pcls">{{log.message}}</p>
+                      <span class="pull-right"> {{log.sentTime}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body" style="padding-top: 5px;padding-bottom: 10px">
+              <form #formLog="ngForm" (ngSubmit)="onSubmitLog(formLog)">
+                <div class="row">
+                  <div class="form-group col-sm-12">
+                    <textarea class="form-control" rows="2" maxlength="5000" id="comments_01" name="comments" #commentsLog="ngModel"
+                      placeholder="Type your message here" style="resize: none"
+                      [(ngModel)]="communicationLog.message"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary  btn-success btn-sm pull-right"
+                      (click)="onResetCommentLog(formLog)">
+                      <i class="fa fa-check-circle"></i> Reset</button>
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary btn-sm pull-right" style="width: 83px;">
+                      <i class="fa fa-check-circle"></i> Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<!-- <meta http-equiv="X-Frame-Options" content="deny"> -->
+
+
+<div class="body">
+  <div class="app flex-row align-items-center " style="height: 100%">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <form #formLogin="ngForm" (ngSubmit)="onLogin(formLogin)">
+            <div class="card-group ">
+              <div class="card p-4">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3>Login</h3>
+                    </div>
+                   
+                  </div>
+                  <!-- <div class="input-group mb-3"><h3>BioMet Admin Login</h3>
+                    <img class="pull-right" src="assets/img/logo.png" style="height: 45px; width: 100px">
+                  </div> -->
+
+
+                  <p class="text-muted">Sign In to your account</p>
+                  <div class="input-group mb-3">
+                    <span class="input-group-addon">
+                      <i class="icon-user"></i>
+                    </span>
+                    <input type="text"  id="userName"  name="userName"  maxlength="50"  class="form-control"  placeholder="Username*"   [(ngModel)]="user.userName"
+                       #userName="ngModel" #input   required>
+                  </div>
+                 
+                  <div class="input-group mb-4">
+                    <span class="input-group-addon">
+                      <i class="icon-lock"></i>
+                    </span>
+                    <input type="password"  id="password"  name="password"  maxlength="50"  class="form-control"  placeholder="Password*"   [(ngModel)]="user.password"
+                       #password="ngModel"  required>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="submit" id="submitLoginForm" name="submitLoginForm" class="btn btn-primary px-4" [disabled]="loading">Login</button>
+                    </div>
+                    
+                  </div>  
+
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    
+  </div>
+</div>
