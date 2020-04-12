@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "MessagingClient"
+  "defaultProject": "MessagingClient",
+  "cli": {
+    "analytics": "c5fed9b1-9dbf-48e1-ad50-454fdfdb49a8"
+  }
 }

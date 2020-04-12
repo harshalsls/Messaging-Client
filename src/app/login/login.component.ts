@@ -44,12 +44,12 @@ export class LoginComponent implements OnInit {
     
     this.loginService.logIn(this.user).subscribe(
       res => {
-        if(this.user.userName == res.userName && this.user.password == res.password) {
+       // if(this.user.userName == res.userName && this.user.password == res.password) {
         this.dataService.setData(this.KEY_USER,res)
         this.router.navigate(['./messaging']);  
-      } else {
-        alert("Please enter correct username and password.")
-      }
+   //   } else {
+    //    alert("Please enter correct username and password.")
+    //  }
         },
       error => {
 
